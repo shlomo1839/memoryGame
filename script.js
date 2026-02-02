@@ -1,33 +1,15 @@
-// const board = document.getElementById("game-board");
-
-// const elements = ['😈', '😈', '🧤', '🧤', '👑', '👑', '🎯', '🎯'];
-
-// elements.forEach(element => {
-//     const card = document.createElement('div');
-//     card.classList.add('card');
-
-//     card.textContent = element;
-
-//     card.addEventListener('click', () => {
-//         card.classList.add('flipped');
-//     });
-
-//     board.appendChild(card)
-// });
-
-const board = document.getElementById('game-board');
-const emojis = ['😈', '😈', '🧤', '🧤', '👑', '👑', '🎯', '🎯'];
+const board = document.getElementById("game-board");
+const elements = ['😈', '😈', '🧤', '🧤', '👑', '👑', '🎯', '🎯'];
 
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 
-
-
-emojis.forEach(emoji => {
+elements.forEach(element => {
     const card = document.createElement('div');
     card.classList.add('card');
-    card.textContent = emoji;
+
+    card.textContent = element;
 
     card.addEventListener('click', () => {
         if (lockBoard) return;
@@ -43,9 +25,10 @@ emojis.forEach(emoji => {
 
         secondCard = card;
         checkMatch();
+
     });
 
-    board.appendChild(card);
+    board.appendChild(card)
 });
 
 function checkMatch() {
@@ -63,8 +46,8 @@ function checkMatch() {
     }
 }
 
-function resetBoard() {
-    firstCard = null;
-    secondCard = null;
-    lockBoard = false;
-}
+// function resetBoard() {
+//     firstCard = null;
+//     secondCard = null;
+//     lockBoard = false;
+// }
