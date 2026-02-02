@@ -22,7 +22,7 @@ let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 
-// emojis.sort(() => Math.random() - 0.5);
+
 
 emojis.forEach(emoji => {
     const card = document.createElement('div');
