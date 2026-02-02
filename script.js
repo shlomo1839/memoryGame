@@ -16,7 +16,7 @@
 // });
 
 const board = document.getElementById('game-board');
-const emojis = ['🍎', '🍎', '🍋', '🍋', '🍇', '🍇', '🍒', '🍒'];
+const emojis = ['😈', '😈', '🧤', '🧤', '👑', '👑', '🎯', '🎯'];
 
 let firstCard = null;
 let secondCard = null;
