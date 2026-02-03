@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>memory game</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>משחק הזיכרון הראשון שלי</title>
+  <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <div class="game-board">
-
-    </div>
-    <script src="script.js"></script>
+  <div class="container">
+    <h2>משחק הזיכרון</h2>
+    <div id="game-board" class="game-board"></div>
+    <button class="reset" onclick="window.location.reload()">איפוס משחק</button>
+  </div>
+  <!-- <div class="container">
+    <h2>משחק הזיכרון</h2>
+    <div id="game-board" class="game-board"></div>
+    <button class="reset" onclick="resetGame()">איפוס משחק</button>
+</div> -->
+  <script src="./index.js" defer></script>
 </body>
 </html>

@@ -1,27 +1,86 @@
-#game-board {
-    display: grid;
-    width: 450;
-    grid-template-columns: repeat(4. 1fr);
-    gap: 10px;
-    max-width: 500px;
-    margin: 20px;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle, #1a1a2e 0%, #16213e 100%);
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px #48cae4, 0 0 20px #48cae4;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-gap: 15px;
+  perspective: 1000px;
 }
 
 .card {
-    height: 100px;
-    width: 100px;
-    background-color: #2c3e50;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    cursor: pointer;
-    border-radius: 8px;
-    color: transparent;           /*hidde the element*/
+  width: 100px;
+  height: 100px;
+  position: relative;
+  /* Dark card back */
+  background: #0f3460;
+  cursor: pointer;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  border-color: #48cae4;
+  box-shadow: 0 0 15px rgba(72, 202, 228, 0.5);
 }
 
 .card.flipped {
-    background-color: #ecf0f1;
-    color: black;
-    cursor: default;
+  background: #e94560;
+  font-size: 3em;
+  transform: rotateY(180deg);
+  pointer-events: none;
+  box-shadow: 0 0 20px rgba(233, 69, 96, 0.6);
+}
+
+.reset {
+  margin-top: 30px;
+  padding: 12px 30px;
+  background: #48cae4;
+  border: none;
+  border-radius: 50px;
+  color: #1a1a2e;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+.reset:hover {
+  background: #00b4d8;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
 }
